@@ -265,7 +265,7 @@ if __name__ == "__main__":
 
     # warunki poczatkowe
     x0 = [15000.0, 0.1385]  # [RPM], [kg/s]
-    u0 = [0] # [kg/s^2]
+    u0 = [0]  # [kg/s^2]
 
     # zadany stan koncowy
     n_des = 20000.0
@@ -273,13 +273,13 @@ if __name__ == "__main__":
     r = [n_des, q_des]  # [RPM], [kg/s]
 
     # zadane wymiary problemu
-    n = 2 # liczba zmiennych stanu
-    m = 1 # liczba zmiennych sterujacych
+    n = 2  # liczba zmiennych stanu
+    m = 1  # liczba zmiennych sterujacych
 
     # deklaracja macierzy sterowania LQR
     A = np.zeros((n, n))  # dynamika ukladu
     B = np.zeros((n, m))  # macierz sterowania
-    Q = [[0.000001, 0], [0, 0]]  # macierz wagi stanu ukladu
+    Q = [[0.000001, 0], [0, 100]]  # macierz wagi stanu ukladu
     R = [5000]  # macierz wagi sygnalu
 
     # deklaracja czasu symulacji, t_0, kroku czasowego
